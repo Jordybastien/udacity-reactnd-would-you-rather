@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from './shared/Button';
-import Select from './shared/Select';
+import Button from '../components/shared/Button';
+import Select from '../components/shared/Select';
 
 class Login extends Component {
   handleChange = () => {
@@ -45,7 +45,7 @@ class Login extends Component {
             <div className='login-form'>
               <h4 className='text-center'>Login</h4>
               <Select options={arr} onChange={this.handleChange} />
-              <Button goTo='/' toExecute={this.handleChange} label='Test' />
+              <Button goTo='/' toExecute={this.handleChange} label='Test' classToUse='btn-primary'/>
             </div>
           </div>
         </div>

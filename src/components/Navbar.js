@@ -17,7 +17,7 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink className='nav-link' to='/question'>
+              <NavLink className='nav-link' to='/add'>
                 New Question
               </NavLink>
             </li>
@@ -29,7 +29,7 @@ const Navbar = () => {
           </ul>
           <ul className='navbar-nav ml-auto nav-flex-icons'>
             <li className='nav-item avatar'>
-                <span className='mr-3 white-color'>Jordy Bastien Rugumbira</span>
+                <span className='mr-3 text-white'>Jordy Bastien Rugumbira</span>
                 <img
                   src='https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg'
                   className='rounded-circle z-depth-0'

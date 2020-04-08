@@ -1,3 +1,15 @@
+/* Content */
+/* 1. Body */
+/* 2. Card */
+/* 3. Login form */
+/* 4. Poll */
+/* 5. Result */
+/* 6. Leader Board */
+/* 7. Custom button */
+/* ------------- */
+/* ------------- */
+/* ------------- */
+/* 1. Body */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,15 +24,13 @@ code {
     monospace;
 }
 
-.white-color {
-  color: #fff !important;
-}
+/* 2. Card Box */
 
 .card-box {
   width: 100%;
   max-width: 590px;
   display: grid;
-  margin: 0 auto;
+  margin: 10px 0px 10px 0px;
   border: 1px solid #dad7d7;
   border-radius: 3px;
 }
@@ -30,6 +40,123 @@ code {
   border-bottom: 1px solid #dad7d7;
 }
 
+/* 3. Login form */
 .login-form {
   padding: 10px;
+}
+
+.line-span {
+  background: #fff;
+  margin-left: 220px;
+}
+
+.line-on-side {
+  border-bottom: 1px solid #dadada;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+/* 4. Poll */
+.poll-body {
+  display: flex;
+  padding: 10px;
+}
+
+.poll-avatar {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+.poll-avatar-body {
+  padding: 0px 10px 0px 30px;
+  width: 140px;
+}
+
+.poll-question {
+  margin-bottom: 20px;
+}
+
+.question-avatar {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+
+.question-avatar-body {
+  width: 140px;
+  padding: 0px 10px 0px 0px;
+}
+
+.poll-answer {
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  padding: 10px;
+  display: grid;
+  margin: 0px 0px 10px 0px;
+}
+.side-box {
+  padding: 0px 0px 0px 10px;
+  width: 100%;
+}
+
+/* 5. Result */
+.result-avatar {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 70px 0px 0px 0px;
+}
+
+.answered-poll {
+  border: 2px solid #42a5f5 !important;
+  background: #42a5f552;
+}
+
+.answered-poll-container {
+  position: absolute;
+  background: #05da05;
+  right: 1em;
+  border-radius: 50%;
+  padding: 15px 10px 15px 10px;
+  top: 4em;
+}
+
+.answered-poll-label {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* 6. Leader Board */
+.lead-board {
+  padding: 10px;
+  width: 300px;
+}
+
+.lead-avatar-body {
+  padding: 0px 10px 0px 10px;
+}
+.lead-score {
+  margin-left: 10px;
+  width: 90px;
+  border: 1px solid #dad7d7;
+}
+
+.score-label {
+  background: #42a5f5;
+  border-radius: 50%;
+  padding: 15px 5px 15px 5px;
+  margin: 10px;
+}
+
+.score {
+  color: white;
+  font-weight: bold;
+}
+
+
+/* 7. Custom button */
+.custom-btn {
+  border-radius: 5px;
+  border: 1px solid #4285f4 !important;
 }
