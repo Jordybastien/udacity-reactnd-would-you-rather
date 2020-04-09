@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import LoadingBar from 'react-redux-loading';
 import Navbar from './components/Navbar';
@@ -10,24 +10,38 @@ import Result from './components/poll/Result';
 import Leaderboard from './views/LeaderBoard';
 import NewQuestion from './views/Newquestion';
 import { handleInitialData } from './actions/shared';
+import { setAuthedUser } from './actions/authedUser';
+import NotFound from './components/Notfound';
 
 class App extends Component {
+  /**
+   * @description This is the lifecycle that will be invoked
+   *  when the component will be mounted and executes the function
+   * to fetch data
+   */
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
 
   render() {
+    const user = localStorage.getItem('authedUser');
+    if (user) {
+      this.props.dispatch(setAuthedUser(user));
+    }
     return (
       <Router>
         <Fragment>
           <Navbar />
           <LoadingBar />
-          <Route path='/' exact component={Homepage} />
-          <Route path='/login' exact component={Login} />
-          <Route path='/question' exact component={Question} />
-          <Route path='/result' exact component={Result} />
-          <Route path='/leaderboard' exact component={Leaderboard} />
-          <Route path='/add' exact component={NewQuestion} />
+          <Switch>
+            <Route path='/' exact component={Homepage} />
+            <Route path='/login' component={Login} />
+            <Route path='/question' component={Question} />
+            <Route path='/result' component={Result} />
+            <Route path='/leaderboard' component={Leaderboard} />
+            <Route path='/add' component={NewQuestion} />
+            <Route component={NotFound} />
+          </Switch>
         </Fragment>
       </Router>
     );

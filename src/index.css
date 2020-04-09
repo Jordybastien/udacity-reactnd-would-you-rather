@@ -154,9 +154,13 @@ code {
   font-weight: bold;
 }
 
-
 /* 7. Custom button */
 .custom-btn {
   border-radius: 5px;
   border: 1px solid #4285f4 !important;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 0;
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Button = ({ goTo, toExecute, label, classToUse }) => {
   return (
-    <Link to={goTo} className={`btn ${classToUse} btn-block custom-btn`} onClick={toExecute}>
+    <Link to={goTo} className={`btn ${classToUse} btn-block custom-btn`} onClick={toExecute} disabled>
       {label}
     </Link>
   );

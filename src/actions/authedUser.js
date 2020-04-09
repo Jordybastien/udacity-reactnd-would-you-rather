@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER } from './types';
+import { SET_AUTHED_USER, LOGOUT_USER } from './types';
 
 /**
  * @description set Authed Used action
@@ -9,5 +9,11 @@ export const setAuthedUser = (id) => {
   return {
     type: SET_AUTHED_USER,
     id,
+  };
+};
+
+export const logoutUser = () => {
+  return {
+    type: LOGOUT_USER,
   };
 };

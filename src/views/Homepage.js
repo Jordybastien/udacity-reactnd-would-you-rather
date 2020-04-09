@@ -7,6 +7,7 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from 'mdbreact';
+import { connect } from 'react-redux';
 import Poll from '../components/poll';
 
 class Homepage extends Component {
@@ -69,4 +70,13 @@ class Homepage extends Component {
     );
   }
 }
-export default Homepage;
+
+const mapStateToProps = ({ questions }) => {
+  return {
+    questionsIds: Object.keys(questions).sort(
+      (a, b) => questions[b].timestamp - questions[a].timestamp
+    ),
+  };
+};
+
+export default connect(mapStateToProps)(Homepage);

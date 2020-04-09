@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
-import Button from '../components/shared/Button';
+import { connect } from 'react-redux';
+import { withRouter, Redirect } from 'react-router-dom';
 import Select from '../components/shared/Select';
+import { setAuthedUser } from '../actions/authedUser';
 
 class Login extends Component {
-  handleChange = () => {
-    console.log('==> CLICKED <==');
+  state = {
+    user: '',
+  };
+
+  /**
+   * @description handle changes from the selected User
+   * @param  e receives event
+   * @returns it changes the state to the new value
+   */
+  handleChange = (e) => {
+    return this.setState({ user: e.target.value });
+  };
+
+  /**
+   * @description handle form submission
+   * @param  e receives event
+   * @returns it dispactches an authenticated User and redirect user to homepage
+   */
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { user } = this.state;
+    this.props.dispatch(setAuthedUser(user));
+    localStorage.setItem('authedUser', user);
+    return this.props.history.push('/');
   };
 
   render() {
-    const arr = [
-      {
-        user: 'User 1',
-        image:
-          'https://res.cloudinary.com/pristinetechnicalgroup/image/upload/v1586193896/eymlxmhvrvgl1o6wkjpd.jpg',
-      },
-      {
-        user: 'User 2',
-        image:
-          'https://res.cloudinary.com/pristinetechnicalgroup/image/upload/v1586192129/pvow4oxyyfnc4zbz3lv3.jpg',
-      },
-      {
-        user: 'User 3',
-        image:
-          'https://res.cloudinary.com/pristinetechnicalgroup/image/upload/v1586192129/pvow4oxyyfnc4zbz3lv3.jpg',
-      }
-    ];
+    const { allUsers, isAuth } = this.props;
+    const { user } = this.state;
+    if (isAuth) {
+      return <Redirect to='/' />;
+    }
     return (
       <div className='container'>
         <div className='col-md-5 mx-auto py-3'>
@@ -44,8 +56,16 @@ class Login extends Component {
             </div>
             <div className='login-form'>
               <h4 className='text-center'>Login</h4>
-              <Select options={arr} onChange={this.handleChange} />
-              <Button goTo='/' toExecute={this.handleChange} label='Test' classToUse='btn-primary'/>
+              <form className='new-tweet' onSubmit={this.handleSubmit}>
+                <Select options={allUsers} onChange={this.handleChange} />
+                <button
+                  className='btn btn-primary btn-block custom-btn'
+                  type='submit'
+                  disabled={user === ''}
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -54,4 +74,13 @@ class Login extends Component {
   }
 }
 
-export default Login;
+const mapStateToProps = ({ users, authedUser }) => {
+  return {
+    allUsers: Object.keys(users).map((user) => {
+      return user;
+    }),
+    isAuth: authedUser !== null,
+  };
+};
+
+export default withRouter(connect(mapStateToProps)(Login));
