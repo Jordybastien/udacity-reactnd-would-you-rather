@@ -12,7 +12,7 @@ const Button = ({ goTo, toExecute, label, classToUse }) => {
 
 Button.propTypes = {
   goTo: PropTypes.string.isRequired,
-  toExecute: PropTypes.func.isRequired,
+  toExecute: PropTypes.func,
   label: PropTypes.string.isRequired,
   classToUse: PropTypes.string.isRequired
 };

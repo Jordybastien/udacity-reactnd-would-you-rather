@@ -5,7 +5,7 @@ const Select = ({ options, onChange }) => {
   return (
     <div className='my-2'>
       <select className='form-control' onChange={onChange}>
-        <option selected disabled>
+        <option defaultValue>
           Select User
         </option>
         {options.map((option) => (

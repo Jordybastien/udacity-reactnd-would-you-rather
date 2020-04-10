@@ -15,7 +15,9 @@ class Login extends Component {
    * @returns it changes the state to the new value
    */
   handleChange = (e) => {
-    return this.setState({ user: e.target.value });
+    if (e.target.value !== 'Select User') {
+      return this.setState({ user: e.target.value });
+    }
   };
 
   /**
