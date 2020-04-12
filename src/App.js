@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import Homepage from './views/Homepage';
 import Login from './views/Login';
 import Question from './components/poll/Question';
-import Result from './components/poll/Result';
 import Leaderboard from './views/LeaderBoard';
 import NewQuestion from './views/Newquestion';
 import { handleInitialData } from './actions/shared';
@@ -37,7 +36,6 @@ class App extends Component {
             <Route path='/' exact component={Homepage} />
             <Route path='/login' component={Login} />
             <Route path='/questions/:question_id' component={Question} />
-            <Route path='/result' component={Result} />
             <Route path='/leaderboard' component={Leaderboard} />
             <Route path='/add' component={NewQuestion} />
             <Route component={NotFound} />
