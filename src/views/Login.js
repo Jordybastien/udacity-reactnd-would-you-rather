@@ -58,7 +58,7 @@ class Login extends Component {
             </div>
             <div className='login-form'>
               <h4 className='text-center'>Login</h4>
-              <form className='new-tweet' onSubmit={this.handleSubmit}>
+              <form onSubmit={this.handleSubmit}>
                 <Select options={allUsers} onChange={this.handleChange} />
                 <button
                   className='btn btn-primary btn-block custom-btn'

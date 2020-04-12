@@ -1,4 +1,8 @@
-import { RECEIVE_QUESTIONS, ADD_QUESTION_RESPONSE } from "../actions/types";
+import {
+  RECEIVE_QUESTIONS,
+  ADD_QUESTION_RESPONSE,
+  ADD_QUESTION,
+} from "../actions/types";
 
 /**
  * @description Questions Reducer
@@ -25,6 +29,11 @@ export default function questions(state = {}, action) {
             ]),
           },
         },
+      };
+    case ADD_QUESTION:
+      return {
+        ...state,
+        [action.question.id]: action.question,
       };
     default:
       return state;

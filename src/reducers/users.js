@@ -1,4 +1,8 @@
-import { RECEIVE_USERS, ALLOCATE_ANSWER_TO_USER } from "../actions/types";
+import {
+  RECEIVE_USERS,
+  ALLOCATE_ANSWER_TO_USER,
+  ALLOCATE_QUESTION_TO_USER,
+} from "../actions/types";
 
 /**
  * @description Questions Reducer
@@ -23,6 +27,14 @@ export default function users(state = {}, action) {
             [action.qid]: action.answer,
           },
         },
+      };
+    case ALLOCATE_QUESTION_TO_USER:
+      return {
+        ...state,
+        [action.authedUser]: {
+          ...state[action.authedUser],
+          questions: state[action.authedUser].questions.concat([action.qid])
+        }
       };
     default:
       return state;
