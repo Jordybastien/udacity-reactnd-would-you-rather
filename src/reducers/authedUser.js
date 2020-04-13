@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER, LOGOUT_USER } from "../actions/types";
+import { SET_AUTHED_USER, LOGOUT_USER } from '../actions/types';
 
 /**
  * @description authed User Reducer

@@ -3,7 +3,7 @@ import {
   _getQuestions,
   _saveQuestion,
   _saveQuestionAnswer,
-} from "./_DATA.js";
+} from './_DATA.js';
 
 /**
  * @description Function will handle fetching initial data

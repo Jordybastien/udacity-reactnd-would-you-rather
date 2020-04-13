@@ -1,15 +1,14 @@
-import React from "react";
-import { connect } from "react-redux";
-import LeaderBox from "../components/LeaderBox";
+import React from 'react';
+import { connect } from 'react-redux';
+import LeaderBox from '../components/LeaderBox';
 
 const LeaderBoard = (props) => {
-
   const { usersIds } = props;
   let i = 1;
 
   return (
-    <div className="container">
-      <div className="col-md-6 mx-auto my-auto">
+    <div className='container'>
+      <div className='col-md-6 mx-auto my-auto'>
         {usersIds.map((user) => (
           <LeaderBox key={user} id={user} index={i++} />
         ))}

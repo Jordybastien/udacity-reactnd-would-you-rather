@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const TextBox = ({ type, placeholder, value, name, onChange }) => {
   return (
@@ -9,7 +9,7 @@ const TextBox = ({ type, placeholder, value, name, onChange }) => {
       value={value}
       onChange={onChange}
       name={name}
-      className="form-control mb-3"
+      className='form-control mb-3'
     />
   );
 };

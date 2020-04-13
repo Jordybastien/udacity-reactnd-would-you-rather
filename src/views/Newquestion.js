@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import TextBox from "../components/shared/TextBox";
-import { withRouter } from "react-router-dom";
-import { handleNewQuestion } from "../actions/questions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import TextBox from '../components/shared/TextBox';
+import { withRouter } from 'react-router-dom';
+import { handleNewQuestion } from '../actions/questions';
 
 class NewQuestion extends Component {
   state = {
-    optionOneText: "",
-    optionTwoText: "",
+    optionOneText: '',
+    optionTwoText: '',
   };
 
   /**
@@ -40,42 +40,42 @@ class NewQuestion extends Component {
     const { optionOneText, optionTwoText } = this.state;
 
     return (
-      <div className="container">
-        <div className="col-md-6 mx-auto my-auto">
-          <div className="card-box">
-            <div className="card-heading">
-              <h5 className="font-weight-bold pl-3 text-center">
+      <div className='container'>
+        <div className='col-md-6 mx-auto my-auto'>
+          <div className='card-box'>
+            <div className='card-heading'>
+              <h5 className='font-weight-bold pl-3 text-center'>
                 Create Question
               </h5>
             </div>
-            <div className="poll-body">
-              <div className="side-box">
-                <div className="poll-question">
+            <div className='poll-body'>
+              <div className='side-box'>
+                <div className='poll-question'>
                   <span>Complete the question</span>
-                  <h5 className="font-weight-bold mt-5">Would you Rather?</h5>
+                  <h5 className='font-weight-bold mt-5'>Would you Rather?</h5>
                 </div>
                 <form onSubmit={this.handleSubmit}>
                   <TextBox
-                    type="text"
-                    placeholder="Enter option two text here"
+                    type='text'
+                    placeholder='Enter option two text here'
                     value={optionOneText}
-                    name="optionOneText"
+                    name='optionOneText'
                     onChange={this.handleOpOne}
                   />
-                  <p className="line-on-side">
-                    <span className="line-span text-center">OR</span>
+                  <p className='line-on-side'>
+                    <span className='line-span text-center'>OR</span>
                   </p>
                   <TextBox
-                    type="text"
-                    placeholder="Enter option two text here"
+                    type='text'
+                    placeholder='Enter option two text here'
                     value={optionTwoText}
-                    name="optionTwoText"
+                    name='optionTwoText'
                     onChange={this.handleOpTwo}
                   />
                   <button
-                    className="btn btn-primary btn-block custom-btn"
-                    type="submit"
-                    disabled={optionOneText === "" || optionTwoText === ""}
+                    className='btn btn-primary btn-block custom-btn'
+                    type='submit'
+                    disabled={optionOneText === '' || optionTwoText === ''}
                   >
                     Submit
                   </button>

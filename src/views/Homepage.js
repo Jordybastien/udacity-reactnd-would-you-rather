@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   MDBContainer,
   MDBTabPane,
@@ -6,13 +6,13 @@ import {
   MDBNav,
   MDBNavItem,
   MDBNavLink,
-} from "mdbreact";
-import { connect } from "react-redux";
-import Poll from "../components/poll";
+} from 'mdbreact';
+import { connect } from 'react-redux';
+import Poll from '../components/poll';
 
 class Homepage extends Component {
   state = {
-    activeItem: "1",
+    activeItem: '1',
   };
 
   toggle = (tab) => (e) => {
@@ -27,17 +27,17 @@ class Homepage extends Component {
     const { answered, unanswered } = this.props;
 
     return (
-      <div className="container">
-        <div className="col-md-6 mx-auto my-auto">
+      <div className='container'>
+        <div className='col-md-6 mx-auto my-auto'>
           <MDBContainer>
-            <MDBNav className="nav-tabs mt-5">
+            <MDBNav className='nav-tabs mt-5'>
               <MDBNavItem>
                 <MDBNavLink
                   link
-                  to="#"
-                  active={this.state.activeItem === "1"}
-                  onClick={this.toggle("1")}
-                  role="tab"
+                  to='#'
+                  active={this.state.activeItem === '1'}
+                  onClick={this.toggle('1')}
+                  role='tab'
                 >
                   Unanwered Questions
                 </MDBNavLink>
@@ -45,24 +45,24 @@ class Homepage extends Component {
               <MDBNavItem>
                 <MDBNavLink
                   link
-                  to="#"
-                  active={this.state.activeItem === "2"}
-                  onClick={this.toggle("2")}
-                  role="tab"
+                  to='#'
+                  active={this.state.activeItem === '2'}
+                  onClick={this.toggle('2')}
+                  role='tab'
                 >
                   Answered Questions
                 </MDBNavLink>
               </MDBNavItem>
             </MDBNav>
             <MDBTabContent activeItem={this.state.activeItem}>
-              <MDBTabPane tabId="1" role="tabpanel">
+              <MDBTabPane tabId='1' role='tabpanel'>
                 {unanswered && unanswered.length !== 0 ? (
                   unanswered.map((id) => <Poll key={id} id={id} />)
                 ) : (
                   <h3 className='mt-5'>Nothing to show here currently</h3>
                 )}
               </MDBTabPane>
-              <MDBTabPane tabId="2" role="tabpanel">
+              <MDBTabPane tabId='2' role='tabpanel'>
                 {answered && answered.map((id) => <Poll key={id} id={id} />)}
               </MDBTabPane>
             </MDBTabContent>

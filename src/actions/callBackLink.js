@@ -1,4 +1,4 @@
-import { SET_CALL_BACK_LINK } from "./types";
+import { SET_CALL_BACK_LINK } from './types';
 
 /**
  * @description set callback link

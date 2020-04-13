@@ -34,11 +34,14 @@ class App extends Component {
           <Navbar />
           <LoadingBar />
           <Switch>
-            <ProtectedRoute path ='/' exact component={Homepage} />
+            <ProtectedRoute path='/' exact component={Homepage} />
             <Route path='/login' component={Login} />
-            <ProtectedRoute path ='/questions/:question_id' component={Question} />
-            <ProtectedRoute path ='/leaderboard' component={Leaderboard} />
-            <ProtectedRoute path ='/add' component={NewQuestion} />
+            <ProtectedRoute
+              path='/questions/:question_id'
+              component={Question}
+            />
+            <ProtectedRoute path='/leaderboard' component={Leaderboard} />
+            <ProtectedRoute path='/add' component={NewQuestion} />
             <Route component={NotFound} />
           </Switch>
         </Fragment>

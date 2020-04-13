@@ -5,11 +5,11 @@ const Select = ({ options, onChange }) => {
   return (
     <div className='my-2'>
       <select className='form-control' onChange={onChange}>
-        <option defaultValue>
-          Select User
-        </option>
+        <option defaultValue>Select User</option>
         {options.map((option) => (
-          <option key={option} value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>

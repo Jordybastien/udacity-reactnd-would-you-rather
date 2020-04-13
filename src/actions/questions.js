@@ -1,11 +1,11 @@
-import { showLoading, hideLoading } from "react-redux-loading";
+import { showLoading, hideLoading } from 'react-redux-loading';
 import {
   RECEIVE_QUESTIONS,
   ADD_QUESTION_RESPONSE,
   ADD_QUESTION,
-} from "./types";
-import { saveQuestionAnswer, saveQuestion } from "../utils/api";
-import { assignUserAnswer, assignUserQuestion } from "./users";
+} from './types';
+import { saveQuestionAnswer, saveQuestion } from '../utils/api';
+import { assignUserAnswer, assignUserQuestion } from './users';
 
 /**
  * @description fetch Questions action
@@ -48,7 +48,7 @@ export const handleVote = (info) => {
         dispatch(hideLoading());
       })
       .catch((e) => {
-        alert("There was an error voting");
+        alert('There was an error voting');
       });
   };
 };

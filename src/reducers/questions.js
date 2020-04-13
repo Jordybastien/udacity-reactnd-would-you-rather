@@ -2,7 +2,7 @@ import {
   RECEIVE_QUESTIONS,
   ADD_QUESTION_RESPONSE,
   ADD_QUESTION,
-} from "../actions/types";
+} from '../actions/types';
 
 /**
  * @description Questions Reducer

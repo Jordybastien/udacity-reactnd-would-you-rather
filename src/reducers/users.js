@@ -2,7 +2,7 @@ import {
   RECEIVE_USERS,
   ALLOCATE_ANSWER_TO_USER,
   ALLOCATE_QUESTION_TO_USER,
-} from "../actions/types";
+} from '../actions/types';
 
 /**
  * @description users Reducer
@@ -33,8 +33,8 @@ export default function users(state = {}, action) {
         ...state,
         [action.authedUser]: {
           ...state[action.authedUser],
-          questions: state[action.authedUser].questions.concat([action.qid])
-        }
+          questions: state[action.authedUser].questions.concat([action.qid]),
+        },
       };
     default:
       return state;

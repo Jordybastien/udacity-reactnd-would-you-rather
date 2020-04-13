@@ -1,4 +1,4 @@
-import { SET_CALL_BACK_LINK } from "../actions/types";
+import { SET_CALL_BACK_LINK } from '../actions/types';
 
 /**
  * @description call back link Reducer

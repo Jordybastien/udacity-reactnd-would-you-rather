@@ -2,7 +2,7 @@ import {
   RECEIVE_USERS,
   ALLOCATE_ANSWER_TO_USER,
   ALLOCATE_QUESTION_TO_USER,
-} from "./types";
+} from './types';
 
 /**
  * @description fetch Users action
