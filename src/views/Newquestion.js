@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import TextBox from "../components/shared/TextBox";
-import { Redirect, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { handleNewQuestion } from "../actions/questions";
 
 class NewQuestion extends Component {
@@ -38,11 +38,7 @@ class NewQuestion extends Component {
 
   render() {
     const { optionOneText, optionTwoText } = this.state;
-    const { isAuth } = this.props;
 
-    if (!isAuth) {
-      return <Redirect to='/login' />;
-    }
     return (
       <div className="container">
         <div className="col-md-6 mx-auto my-auto">
@@ -93,10 +89,4 @@ class NewQuestion extends Component {
   }
 }
 
-const mapStateToProps = ({ authedUser }) => {
-  return {
-    isAuth: authedUser !== null,
-  };
-};
-
-export default withRouter(connect(mapStateToProps)(NewQuestion));
+export default withRouter(connect()(NewQuestion));

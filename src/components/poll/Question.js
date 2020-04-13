@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { MDBProgress } from "mdbreact";
-import { Redirect } from "react-router-dom";
 import { formatPoll } from "../../utils/helpers";
 import { handleVote } from "../../actions/questions";
 
@@ -37,12 +36,9 @@ class Question extends Component {
   };
 
   render() {
-    const { didUserAnswer, isAuth, question, isOptionOne } = this.props;
+    const { didUserAnswer, question, isOptionOne } = this.props;
     const { answer } = this.state;
 
-    if (!isAuth) {
-      return <Redirect to="/login" />;
-    }
     const opOneVotes = question && question.optionOne.votes.length;
     const opTwoVotes = question && question.optionTwo.votes.length;
     const totalVotes = question && opOneVotes + opTwoVotes;
@@ -196,7 +192,6 @@ const mapStateToProps = ({ questions, users, authedUser }, props) => {
   return {
     didUserAnswer:
       user && question && Object.keys(user.answers).includes(question.id),
-    isAuth: authedUser !== null,
     question: user && question && formatPoll(question, users[question.author]),
     isOptionOne: user && user.answers[id] === "optionOne",
     authedUser,

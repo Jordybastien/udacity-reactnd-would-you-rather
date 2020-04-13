@@ -8,7 +8,6 @@ import {
   MDBNavLink,
 } from "mdbreact";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import Poll from "../components/poll";
 
 class Homepage extends Component {
@@ -25,11 +24,8 @@ class Homepage extends Component {
   };
 
   render() {
-    const { answered, unanswered, isAuth } = this.props;
+    const { answered, unanswered } = this.props;
 
-    if (!isAuth) {
-      return <Redirect to="/login" />;
-    }
     return (
       <div className="container">
         <div className="col-md-6 mx-auto my-auto">
@@ -91,7 +87,6 @@ const mapStateToProps = ({ questions, users, authedUser }) => {
           .filter((question) => !Object.keys(user.answers).includes(question))
           .sort((a, b) => questions[b].timestamp - questions[a].timestamp)
       : null,
-    isAuth: authedUser !== null,
   };
 };
 

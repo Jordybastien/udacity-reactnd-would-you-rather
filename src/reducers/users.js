@@ -5,7 +5,7 @@ import {
 } from "../actions/types";
 
 /**
- * @description Questions Reducer
+ * @description users Reducer
  * @param   state which is initialized to an empty object
  * @param   action will receive action containing type and other necessary data
  * @returns object to make changes to the state users

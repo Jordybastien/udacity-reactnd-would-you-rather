@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import LeaderBox from "../components/LeaderBox";
-import { Redirect } from "react-router-dom";
 
 const LeaderBoard = (props) => {
 
-  const { isAuth, usersIds } = props;
+  const { usersIds } = props;
   let i = 1;
 
-  return isAuth ? (
+  return (
     <div className="container">
       <div className="col-md-6 mx-auto my-auto">
         {usersIds.map((user) => (
@@ -16,14 +15,11 @@ const LeaderBoard = (props) => {
         ))}
       </div>
     </div>
-  ) : (
-    <Redirect to="/login" />
   );
 };
 
-const mapStateToProps = ({ authedUser, users }) => {
+const mapStateToProps = ({ users }) => {
   return {
-    isAuth: authedUser !== null,
     usersIds:
       users &&
       Object.keys(users).sort(

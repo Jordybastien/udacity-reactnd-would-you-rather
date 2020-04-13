@@ -30,7 +30,7 @@ class Login extends Component {
     const { user } = this.state;
     this.props.dispatch(setAuthedUser(user));
     localStorage.setItem('authedUser', user);
-    return this.props.history.push('/');
+    return this.props.history.push(this.props.link || '/');
   };
 
   render() {
@@ -76,12 +76,13 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ users, authedUser }) => {
+const mapStateToProps = ({ users, authedUser, link }) => {
   return {
     allUsers: Object.keys(users).map((user) => {
       return user;
     }),
     isAuth: authedUser !== null,
+    link,
   };
 };
 

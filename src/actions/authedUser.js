@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER, LOGOUT_USER } from './types';
+import { SET_AUTHED_USER, LOGOUT_USER } from "./types";
 
 /**
  * @description set Authed Used action
@@ -12,6 +12,10 @@ export const setAuthedUser = (id) => {
   };
 };
 
+/**
+ * @description logs out the user
+ * @returns returns an object with the action type
+ */
 export const logoutUser = () => {
   return {
     type: LOGOUT_USER,

@@ -11,6 +11,7 @@ import NewQuestion from './views/Newquestion';
 import { handleInitialData } from './actions/shared';
 import { setAuthedUser } from './actions/authedUser';
 import NotFound from './components/Notfound';
+import ProtectedRoute from './components/ProtectedRoute';
 
 class App extends Component {
   /**
@@ -33,11 +34,11 @@ class App extends Component {
           <Navbar />
           <LoadingBar />
           <Switch>
-            <Route path='/' exact component={Homepage} />
+            <ProtectedRoute path ='/' exact component={Homepage} />
             <Route path='/login' component={Login} />
-            <Route path='/questions/:question_id' component={Question} />
-            <Route path='/leaderboard' component={Leaderboard} />
-            <Route path='/add' component={NewQuestion} />
+            <ProtectedRoute path ='/questions/:question_id' component={Question} />
+            <ProtectedRoute path ='/leaderboard' component={Leaderboard} />
+            <ProtectedRoute path ='/add' component={NewQuestion} />
             <Route component={NotFound} />
           </Switch>
         </Fragment>
